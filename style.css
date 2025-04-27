@@ -1,73 +1,80 @@
-.toggle-container {
-  text-align: right;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #4facfe;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+}
+
+.search-btn {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.city-name {
+  font-size: 1.6em;
   margin-bottom: 10px;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+.temp-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.temperature {
+  font-size: 3em;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 24px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.4s;
+.weather-description {
+  text-transform: capitalize;
+  font-style: italic;
+  margin-top: 5px;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.4s;
+.details {
+  margin-top: 15px;
+  font-size: 0.9em;
 }
 
-input:checked + .slider {
-  background-color: #4facfe;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Dark Mode Styles */
-body.dark {
-  background: linear-gradient(135deg, #232526, #414345);
-  color: #eee;
-}
-
-body.dark .container {
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
-}
-
-body.dark .search-box input {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-body.dark .search-box button {
-  background-color: #00f2fe;
-}
-
-body.dark #weatherCard {
-  color: white;
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
