@@ -1,24 +1,34 @@
 <div class="container">
-  <h1>🌤️ CityWeather Hub</h1>
+  
+  <header class="header">
+    <h1 class="logo">CityWeather<span>Hub</span></h1>
 
-  <!-- Dark Mode Toggle Switch -->
-  <div class="toggle-container">
-    <label class="switch">
-      <input type="checkbox" id="modeToggle">
-      <span class="slider"></span>
-    </label>
-  </div>
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
 
-  <div class="search-box">
-    <input type="text" id="cityInput" placeholder="Enter city name...">
-    <button onclick="getWeather()">Search</button>
-  </div>
+  <main class="main-content">
+    <div class="search-section">
+      <input type="text" id="cityInput" placeholder="🔍 Search for a city...">
+      <button class="search-btn" onclick="getWeather()">Get Weather</button>
+    </div>
 
-  <div id="weatherCard" class="hidden">
-    <h2 id="cityName"></h2>
-    <p id="temp"></p>
-    <p id="description"></p>
-    <p id="humidity"></p>
-    <p id="wind"></p>
-  </div>
+    <section id="weatherCard" class="weather-card hidden">
+      <h2 id="cityName" class="city-name"></h2>
+      <div class="temp-wrapper">
+        <p id="temp" class="temperature"></p>
+        <p id="description" class="weather-description"></p>
+      </div>
+      <div class="details">
+        <p id="humidity"></p>
+        <p id="wind"></p>
+      </div>
+    </section>
+  </main>
+
 </div>
